@@ -25,8 +25,10 @@ SECRET_KEY = 'django-insecure-b2z00s1b-&8xy4rjao34^&l(@v=g7id+u9)9!ka0*jx@msau-i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://my-restaurant.braveocean-96b61207.swedencentral.azurecontainerapps.io']
 
 # Application definition
 
@@ -77,8 +79,13 @@ WSGI_APPLICATION = 'restuarant.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'sara',
+        'PASSWORD': 'yakobov!770',
+        'HOST': 'saradb-python.postgres.database.azure.com',
+        'PORT': '',
+        'OPTIONS': {'sslmode': 'require'}
     }
 }
 
@@ -117,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

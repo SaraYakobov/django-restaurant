@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import login,authenticate,logout
 from .models import Category,Dish
-from django.contrib.auth.hashers import make_password
 from orders.models import Cart
 from .forms import CategoryForm, DishForm
 
